@@ -17,5 +17,5 @@ Each repository contains day's subject and checklist.
 * [Day 08: Spring](https://github.com/SpiderChung/piscine_java/tree/master/day08)
 * [Day 09: Sockets](https://github.com/SpiderChung/piscine_java/tree/master/day09)
 ### Rushes (group projects)
-* [Rush 00: Console Game and Maven](https://github.com/Preposterone/java_rush00)
+* [Rush 00: Console Game and Maven](https://github.com/SpiderChung/piscine_java/tree/master/Rush00)
 * [Rush 01: Java FX and Sockets](https://github.com/SpiderChung/piscine_java/tree/master/Rush01)
