@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="preProcessorToUpper" class="edu.school21.spring.preprocessor.PreProcessorToUpperImpl"/>
+
+    <bean id="preProcessorToLower" class="edu.school21.spring.preprocessor.PreProcessorToLowerImpl"/>
+
+
+
+    <bean id="rendererStdImpl" class="edu.school21.spring.renderer.RendererStandardImpl">
+        <constructor-arg type="PreProcessor" name="preProcessor" ref="preProcessorToLower"/>
+    </bean>
+
+    <bean id="rendererErrImpl" class="edu.school21.spring.renderer.RendererErrImpl">
+        <constructor-arg type="PreProcessor" name="preProcessor" ref="preProcessorToUpper"/>
+    </bean>
+
+    <bean id="rendererErrImplTwo" class="edu.school21.spring.renderer.RendererErrImpl">
+        <constructor-arg type="PreProcessor" name="preProcessor" ref="preProcessorToLower"/>
+    </bean>
+
+
+
+    <bean id="printerWithDateErr" class="edu.school21.spring.printer.PrinterWithDateTimeImpl">
+        <constructor-arg type="Renderer" name="renderer" ref="rendererErrImpl"/>
+    </bean>
+
+    <bean id="printerWithPrefix" class="edu.school21.spring.printer.PrinterWithPrefixImpl">
+        <constructor-arg type="Renderer" name="renderer" ref="rendererStdImpl" />
+        <property name="prefix" value="Prefix "/>
+    </bean>
+
+    <bean id="printerWithDate" class="edu.school21.spring.printer.PrinterWithDateTimeImpl">
+        <constructor-arg type="Renderer" name="renderer" ref="rendererStdImpl"/>
+    </bean>
+
+
+
+
+
+
+</beans>
